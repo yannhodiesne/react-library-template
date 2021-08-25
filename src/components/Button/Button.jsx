@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 export const Button = ({
 	children,
 	primary = false,
@@ -5,7 +7,7 @@ export const Button = ({
 	backgroundColor = '#D1D5DB',
 	color = '#1F2937',
 }) => {
-	const buttonStyles = {
+	const buttonStyles = useMemo(() => ({
 		fontWeight: 700,
 		padding: '10px 20px',
 		border: 0,
@@ -14,7 +16,7 @@ export const Button = ({
 		lineHeight: 1,
 		backgroundColor: primary ? '#2563EB' : backgroundColor,
 		color: primary ? '#F3F4F6' : color,
-	};
+	}), [backgroundColor, color, primary]);
 
 	return (
 		<button type="button" onClick={onClick} style={buttonStyles}>

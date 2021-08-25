@@ -7,12 +7,13 @@ export default {
 	argTypes: {
 		backgroundColor: { control: 'color' },
 		color: { control: 'color' },
-		primary: { control: 'boolean' },
+		primary: { control: 'boolean', defaultValue: false },
+		children: { control: 'text', defaultValue: 'Click me!' },
 	},
 };
 
-const Template = (args) => (
-	<Button {...args}>Click me</Button>
+const Template = ({ children, ...args }) => (
+	<Button {...args}>{children}</Button>
 );
 
 export const Default = Template.bind({});
