@@ -1,0 +1,58 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "airbnb",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "max-len": ["warn", { "code": 120 }],
+        "import/prefer-default-export": "off",
+        "arrow-parens": ["error", "always"],
+		"comma-dangle": ["error", {
+			"arrays": "always-multiline",
+			"objects": "always-multiline",
+			"imports": "always-multiline",
+			"exports": "always-multiline",
+			"functions": "ignore"
+		}],
+		"curly": ["error", "all"],
+		"function-paren-newline": ["error", "consistent"],
+		"no-tabs": "off",
+		"indent": ["error", "tab", {
+			"ignoredNodes": ["JSXElement"],
+			"SwitchCase": 1
+		}],
+		"react/jsx-indent": ["error", "tab"],
+		"import/no-cycle": "error",
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 0 }],
+        "object-curly-newline": ["warn", { "consistent": true, "multiline": true }],
+		"padding-line-between-statements": ["error", { "blankLine": "always", "prev": "*", "next": "return" }],
+        "react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+		"react/prop-types": "off"
+    },
+    "overrides": [
+        {
+            "files": ["**/*.test.{js,jsx}", "**/*.stories.{js,jsx}"],
+            "rules": {
+                "react/jsx-props-no-spreading": "off"
+            }
+        }
+    ]
+}
